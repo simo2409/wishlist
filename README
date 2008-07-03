@@ -1,0 +1,82 @@
+This is a little ruby script useful to manage your wishlist.
+Usage of the script is really simple, to add an item:
+
+  $ ruby wishlist.rb add <Item name> <Item price (optional)> <Item url (optional)>
+  
+to list items in your wishlist:
+
+  $ ruby wishlist.rb ls
+
+to delete an item:
+
+  $ ruby wishlist.rb rm <Item ID>
+
+Data is saved (by default) in './wishlist_data.yml', if you want to change location you can change FILE_PATH variable in the script.
+
+===
+
+USEFUL SUGGESTION
+
+I'm on a mac with GeekTool installed and enabled. I configured GeekTool to do every 5 minutes 'wishlist ls' and to print on the desktop the output. I find it really useful when I want buy anything I have in front of my eyes my wishlist and I can evaluate if there is anything 'more interesting' of what I'm going to buy :)
+
+===
+
+Wishlist add
+
+'wishlist add' accepts 3 arguments, the first one (mandatory) is the name of item, the second is the price for the item (optional) and the third is the url of the item (optional).
+
+Consider that price is just a value, it doesn't manage/convert at all currency.
+
+Example:
+
+$ ruby wishlist.rb add iPhone 199$ http://www.apple.com
+Item added
+
+If your item name has one (or more) spaces you can use '' or "" around the name so all your text will be used as name.
+
+Example:
+
+$ ruby wishlist.rb add '16bugs.com Big account' 15$ http://16bugs.com/pricing
+Item added
+
+===
+
+Wishlist ls
+
+'wishlist ls' prints a list of items added in your wishlist.
+
+Example:
+
+$ ruby wishlist.rb ls
+Wishlist:
+ 1 - iPhone (199$)
+  http://www.apple.com
+ 2 - 16bugs.com Big account (15$)
+  http://16bugs.com/pricing
+
+The number before the name is the 'Item ID' (it will be useful in 'wishlist rm').
+
+===
+
+Wishlist rm
+
+'wishlist rm' accepts one argument, the 'Item ID' of the item you want delete.
+
+Example:
+
+$ ruby wishlist.rb rm 1
+Item 1 deleted
+
+Consider that delete is final, there is no way to rescue an item after you deleted it.
+
+
+
+
+
+
+
+
+
+$ ruby wishlist.rb ls
+Wishlist:
+No items in your wishlist.
