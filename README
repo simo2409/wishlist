@@ -68,15 +68,3 @@ $ ruby wishlist.rb rm 1
 Item 1 deleted
 
 Consider that delete is final, there is no way to rescue an item after you deleted it.
-
-
-
-
-
-
-
-
-
-$ ruby wishlist.rb ls
-Wishlist:
-No items in your wishlist.
