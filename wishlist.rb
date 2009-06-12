@@ -37,21 +37,21 @@ begin
     @items = Array.new
   end
   case ARGV[0]
-  when 'add':
+  when 'add'
     if ARGV[1]
       @items << [ARGV[1], (ARGV[2] || nil), (ARGV[3] || nil)]
       puts 'Item added'
     else
       puts 'Missing argument(s)'
     end
-  when 'rm':
+  when 'rm'
     if ARGV[1]
       @items.delete_at((ARGV[1].to_i - 1))
       puts "Item #{ARGV[1].to_i} deleted"
     else
       puts 'Missing argument(s)'
     end
-  when 'ls':
+  when 'ls'
     puts 'Wishlist:'
     if @items.any?
       @items.each_with_index do |item, index|
